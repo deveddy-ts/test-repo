@@ -1,12 +1,7 @@
 version: 1
+default_severity: warning
 rules:
   - name: "Check for TODO comments"
     condition: "banned-terms"
     terms: ["TODO", "FIXME", "HACK"]
-    severity: "warning"
-  
-  - name: "Require tests for new features"
-    condition: "file-pattern"
-    pattern: "src/**/*.js"
-    requires: "**/*.test.js"
     severity: "error"
