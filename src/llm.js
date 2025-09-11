@@ -1,0 +1,6 @@
+GITHUB_PRIVATE_KEY=`-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAyDE8Dp+l3Ue+iO8y2bs5X00VpYC6X1a3wRkuNsR9TiHlBF26
+h3kNvjdnfsdcnsjcdnfmzs vjkedsnf984urkejfnewscsfsadsadadasdSC221QLFIaGir8ge/3N+tEf
+IC1c3XH72aqauOP2AE/iHMEwd6yQClLwOOCgJRgo/EKy59jLcRPSBgEHzW9ylHBc
+wzItrZYSYNqJzS2//1Woy0UnHa0n4owGtvNnWgTnT9bkFLEkB7g=
+-----END RSA PRIVATE KEY-----`

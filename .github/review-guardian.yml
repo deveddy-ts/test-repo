@@ -6,4 +6,15 @@ rag_sources:
     weight: 0.3
   - path: "README.md"
     weight: 0.2
-rules: []
+rules:
+  - name: "Check for TODOs"
+    condition: "banned-terms"
+    terms: ["TODO", "FIXME"]
+    severity: "warning"
+  - name: "AI Database Policy Check"
+    condition: "ai-review"
+    severity: "error"
+    prompt: "Analyze the code changes. If any code attempts to use or connect to a MongoDB database, you MUST report it as a policy violation. Reference the ADR documentation in your reasoning."
+  - name: "Block Potential Secrets"
+    condition: "security-scan"
+    severity: "error"
