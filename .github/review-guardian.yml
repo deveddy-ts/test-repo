@@ -15,3 +15,6 @@ rules:
     condition: "ai-review"
     severity: "error"
     prompt: "Analyze the code changes. If any code attempts to use or connect to a MongoDB database, you MUST report it as a policy violation. Reference the ADR documentation in your reasoning."
+  - name: "Block Potential Secrets"
+    condition: "security-scan"
+    severity: "error"

@@ -1,0 +1,1 @@
+const openaiKey = "sk-proj-51GX0DvePgiayDSSSDJ-averylongandrandomstringDqDy7ID7FhmANQrBFJFNSDUILyvjfY_ZaG7iQGFSIYENFJS"
