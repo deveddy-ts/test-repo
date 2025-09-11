@@ -35,4 +35,4 @@ Real-time Feedback - Instant notifications on code quality issues
 Repository Analytics - Track code quality metrics over time
 GitHub Integration - Native GitHub App with seamless workflow integration
 Team Management - User profiles and repository access control
-
+Contribution is allowed
