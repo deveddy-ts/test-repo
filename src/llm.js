@@ -1,1 +1,1 @@
-const openaiKey = "sk-proj-51GX0DvePgiayDSSSDJ-averylongandrandomstringDqDy7ID7FhmANQrBFJFNSDUILyvjfY_ZaG7iQGFSIYENFy"
+const transactionId = "123e4567-e89b-12d3-a456-426614174000";
