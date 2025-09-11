@@ -1,5 +1,9 @@
 # General Style Guide
 
+**Status:** Accepted
+**Date:** 2025-09-11
+**Deciders:** Core Engineering Team
+
 ## Code Quality Principles
 
 -   **Readability Over Cleverness:** All code should be clear and maintainable.

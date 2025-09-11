@@ -1,6 +1,10 @@
 
 # Review Guardian E2E Test Repo
 
+**Status:** Accepted
+**Date:** 2025-09-11
+**Deciders:** Core Engineering Team
+
 ## Purpose
 
 This repository is the primary end-to-end (E2E) testing ground for the **Review Guardian** GitHub App.
