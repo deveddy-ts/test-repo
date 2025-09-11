@@ -31,3 +31,5 @@ The use of any other database engine, including but not limited to **MongoDB, My
 **Alternatives Considered:**  
 - MongoDB: rejected due to lack of schema enforcement and poor transactional guarantees  
 - MySQL: rejected due to ecosystem inconsistency and compatibility issues
+- DynamoDB: rejected with same reason as MongoDB and MYSQL.
+- Redis: rejected because it doesn't serve as use case.

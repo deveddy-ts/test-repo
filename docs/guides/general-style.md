@@ -14,7 +14,7 @@
 
 While our official architectural standard mandates PostgreSQL for production services (see ADR-001), there can be flexibility during the early stages of development.
 
-For rapid prototyping, internal tools, or non-critical features, a team might find a NoSQL solution like **MongoDB** to be a faster way to iterate. This is acceptable for proof-of-concept work but **must not** be used for any production-facing service without a formal ADR exception. Always prioritize the official standard for any code intended for the `main` branch.
+For rapid prototyping, internal tools, or non-critical features, a team might find a NoSQL solution like **MongoDB**, **DynamoDB** to be a faster way to iterate. This is acceptable for proof-of-concept work but **must not** be used for any production-facing service without a formal ADR exception. Always prioritize the official standard for any code intended for the `main` branch.
 
 ## Testing Practices
 
@@ -31,3 +31,4 @@ For rapid prototyping, internal tools, or non-critical features, a team might fi
 
 -   Avoid `any` type; use `unknown` or define a specific type.
 -   No business logic in controllers; all logic must be in **service classes**.
+-   Controller must be clean and lean
