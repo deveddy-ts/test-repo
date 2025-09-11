@@ -1,7 +1,7 @@
 # ADR 001: Use PostgreSQL for All Stateful Services
 
 **Status:** Accepted
-**Date:** 2025-07-31
+**Date:** 2025-09-11
 **Deciders:** Core Engineering Team
 
 ## Context
