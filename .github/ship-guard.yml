@@ -1,9 +1,6 @@
 version: 1
-rag_sources:
-  - path: "docs/adr/**/*.md"
-    weight: 0.9
-  - path: "docs/guides/**/*.md"
-    weight: 0.3
-  - path: "README.md"
-    weight: 0.2
-rules: []
+rules:
+  - name: "Block TODOs"
+    condition: "banned-terms"
+    terms: ["TODO", "FIXME"]
+    severity: "error"
