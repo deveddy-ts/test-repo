@@ -1,6 +1,0 @@
-version: 1
-rules:
-  - name: "Block TODOs"
-    condition: "banned-terms"
-    terms: ["TODO", "FIXME"]
-    severity: "error"
