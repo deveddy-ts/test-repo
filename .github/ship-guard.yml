@@ -1,6 +1,14 @@
 version: 1
 rules:
-  - name: "Block TODOs"
-    condition: "banned-terms"
-    terms: ["TODO", "FIXME"]
+  - name: "No console in src"
+    condition: "no-console-in-src"
+    enabled: true
+    allowedMethods: ["console.warn"]
     severity: "error"
+    message: "Disallowed console usage detected. Use proper logging instead."
+    paths:
+      - "src/**"
+    excludePaths:
+      - "src/mocks/**"
+    errorCode: "CONSOLE_NOT_ALLOWED"
+    tags: ["lint", "console"]

@@ -1,4 +1,4 @@
 function main() {
-  //TODO: implement the main function
+  console.log("hello world!");  // ❌ should be flagged by the rule
   return "hello world!";
 }
