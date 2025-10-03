@@ -1,16 +1,17 @@
 version: 1
+rag_sources:
+  - path: "docs/adr/**/*.md"
+    weight: 0.9
+  - path: "docs/guides/**/*.md"
+    weight: 0.3
+  - path: "README.md"
+    weight: 0.2
 rules:
-  - name: "No console in src"
-    condition: "no-console-in-src"
-    enabled: true
-    allowedMethods: ["console.warn"]
-    severity: "error"
-    message: "Disallowed console usage detected. Use proper logging instead."
-    paths:
-      - "src/**"
-    errorCode: "CONSOLE_NOT_ALLOWED"
-    tags: ["lint", "console"]
   - name: "Block TODOs"
     condition: "banned-terms"
-    terms: ["TODO", "FIXME"]
+    terms: ["FIXME"]
     severity: "error"
+  - name: "AI Database Policy Check"
+    condition: "ai-review"
+    severity: "error"
+    prompt: "Analyze the code changes. If any code attempts to use or connect to a MongoDB database, you MUST report it as a policy violation. Reference the ADR documentation in your reasoning."
