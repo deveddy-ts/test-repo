@@ -8,7 +8,9 @@ rules:
     message: "Disallowed console usage detected. Use proper logging instead."
     paths:
       - "src/**"
-    excludePaths:
-      - "src/mocks/**"
     errorCode: "CONSOLE_NOT_ALLOWED"
     tags: ["lint", "console"]
+  - name: "Block TODOs"
+    condition: "banned-terms"
+    terms: ["TODO", "FIXME"]
+    severity: "error"
