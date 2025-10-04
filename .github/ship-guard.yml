@@ -1,10 +1,9 @@
 version: 1
 rules:
-  - name: ai-dependency-risk
+  - name: ai-style-guideline
     condition: ai-review
     severity: error
-    tags: ['dependency','ai-review']
+    tags: ['style','ai-review']
     prompt: |
-      Inspect package usage in code diffs for references to new or risky third-party libraries.
-      For each new dependency found, evaluate whether it's mature, widely used, or likely risky (unmaintained,
-      small download counts). If risky, recommend alternatives or require an ADR justification.
+      Run a style pass on the changed files and report inconsistencies with common JS/TS conventions:
+      missing returns, inconsistent naming, long lines >120 chars, and poor variable names. Provide short suggested edits.

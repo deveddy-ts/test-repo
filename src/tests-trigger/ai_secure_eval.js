@@ -1,4 +1,1 @@
-import leftPad from 'left-pad';
-export function pad(s) {
-  return leftPad(s, 10, '-');
-}
+export function VeryBadlyNamedFunctionThatIsAlsoWayTooLongAndExceedsNormalLimitsWhichIsBad() { const x=1; if(x===1) { return 1 } }
