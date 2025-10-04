@@ -1,17 +1,43 @@
 version: 1
-rag_sources:
-  - path: "docs/adr/**/*.md"
-    weight: 0.9
-  - path: "docs/guides/**/*.md"
-    weight: 0.3
-  - path: "README.md"
-    weight: 0.2
 rules:
-  - name: "Block TODOs"
-    condition: "banned-terms"
-    terms: ["FIXME"]
-    severity: "error"
-  - name: "AI Database Policy Check"
-    condition: "ai-review"
-    severity: "error"
-    prompt: "Analyze the code changes. If any code attempts to use or connect to a MongoDB database, you MUST report it as a policy violation. Reference the ADR documentation in your reasoning."
+  - name: no-console
+    condition: no-console-in-src
+    severity: error
+    message: "Remove console statements before merging."
+    allowedMethods: ["console.error", "console.warn"]
+    paths: ["src/**/*.ts", "src/**/*.js"]
+
+  - name: banned-terms
+    condition: banned-terms
+    severity: error
+    terms: ["foobar", "dummy", "eval"]
+    caseSensitive: false
+    useRegex: false
+    excludePaths: ["docs/**"]
+
+  - name: max-file-additions
+    condition: max-file-additions
+    severity: warning
+    maxLines: 500
+    exemptExtensions: ["md"]
+
+  - name: require-tests
+    condition: require-tests
+    severity: warning
+    testPatterns: ["**/*.test.*", "**/*.spec.*"]
+
+  - name: max-file-size
+    condition: max-file-size
+    severity: error
+    maxSizeKB: 500
+
+  - name: no-todo-comments
+    condition: no-todo-comments
+    severity: warning
+    todoPatterns: ["TODO", "FIXME", "HACK"]
+
+  - name: security-scan
+    condition: security-scan
+    severity: error
+    message: "Potential secret detected in code."
+    scanPatterns: [] # fallback to defaults in code
