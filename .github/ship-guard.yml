@@ -1,6 +1,6 @@
 version: 1
 rules:
-  - name: ai-secure-eval
+  - name: ai-secure
     condition: ai-review
     severity: error
     tags: ['security','ai-review']
