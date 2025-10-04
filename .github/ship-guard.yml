@@ -1,9 +1,9 @@
 version: 1
 rules:
-  - name: ai-style-guideline
+  - name: ai-performance-hotpath
     condition: ai-review
     severity: error
-    tags: ['style','ai-review']
+    tags: ['performance','ai-review']
     prompt: |
-      Run a style pass on the changed files and report inconsistencies with common JS/TS conventions:
-      missing returns, inconsistent naming, long lines >120 chars, and poor variable names. Provide short suggested edits.
+      Detect potential performance issues: synchronous blocking operations in async code, O(n^2) loops on arrays,
+      heavy string concatenation in loops, or repeated DB calls inside loops. Suggest batched or memoized approaches.
