@@ -1,10 +1,10 @@
 version: 1
 rules:
-  - name: ai-complexity-check
+  - name: ai-dependency-risk
     condition: ai-review
     severity: error
-    tags: ['security','ai-review']
+    tags: ['dependency','ai-review']
     prompt: |
-      Identify functions with apparent high cyclomatic complexity or deeply nested loops/conditionals.
-      Recommend refactors (extract functions, early returns, small helper utilities). If a function looks complex,
-      return which function and line ranges and a suggested refactor summary.
+      Inspect package usage in code diffs for references to new or risky third-party libraries.
+      For each new dependency found, evaluate whether it's mature, widely used, or likely risky (unmaintained,
+      small download counts). If risky, recommend alternatives or require an ADR justification.
