@@ -5,6 +5,4 @@ rules:
     severity: error
     tags: ['security','ai-review']
     prompt: |
-      Search the provided code for uses of dynamic-evaluation patterns (eval, new Function, setTimeout/string)
-      and insecure deserialization. Explain why these are dangerous and recommend safer alternatives (e.g. static parsing,
-      explicit whitelisting, sandboxing). If such patterns exist, return a short guidance message for a finding.
+      Search the provided code for uses of dynamic-evaluation patterns and insecure deserialization. Explain why these are dangerous and recommend safer alternatives (e.g. static parsing, explicit whitelisting, sandboxing). If such patterns exist, return a short guidance message for a finding.
