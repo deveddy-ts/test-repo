@@ -8,5 +8,5 @@ rules:
     - 'src/test-trigger/**'
     - 'src/test-trigger/**'
     prompt: |
-      Act as a senior software engineer. Detect potential performance issues: synchronous blocking operations in async code, O(n^2) loops on arrays,
+      Detect potential performance issues: synchronous blocking operations in async code, O(n^2) loops on arrays,
       heavy string concatenation in loops, or repeated DB calls inside loops. Suggest batched or memoized approaches.

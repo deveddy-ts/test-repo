@@ -3,7 +3,8 @@ import sqlite3
 import asyncio
 
 
-def find_duplicate(arr):
+def find_duplicates(arr):
+    # should work fine for small arrays
     duplicates = []
     for i in range(len(arr)):
         for j in range(i + 1, len(arr)): 
@@ -12,7 +13,7 @@ def find_duplicate(arr):
     return duplicates
 
 
-def load_user_profile(user_ids):
+def load_user_profiles(user_ids):
     conn = sqlite3.connect("users.db")
     profiles = []
     for uid in user_ids:
@@ -37,8 +38,6 @@ async def main():
     load_user_profiles(users)
     big_text = build_large_string(["performance", "issue"] * 5000)
     print(len(big_text))
-
-# test
 
 if __name__ == "__main__":
     asyncio.run(main())
