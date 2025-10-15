@@ -45,6 +45,7 @@ async def main():
     big_text = build_large_string(["performance", "issue"] * 5000)
     print(len(big_text))
 
+# test
 
 if __name__ == "__main__":
     asyncio.run(main())
