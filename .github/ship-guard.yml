@@ -1,5 +1,12 @@
 version: 1
 rules:
+  - name: "Block TODOs"
+    condition: "banned-terms"
+    terms: ["TODO", "FIXME"]
+    severity: "error"
+  - name: "Require Changelog"
+    condition: "require-changelog"
+    severity: "error"
   - name: ai-performance-hotpath
     condition: ai-review
     severity: error
