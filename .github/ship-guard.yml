@@ -4,6 +4,9 @@ rules:
     condition: ai-review
     severity: error
     tags: ['performance','ai-review']
+    paths:
+    - 'src/test-trigger/**'
+    - 'src/test-trigger/**'
     prompt: |
-      Detect potential performance issues: synchronous blocking operations in async code, O(n^2) loops on arrays,
+      Act as a senior software engineer. Detect potential performance issues: synchronous blocking operations in async code, O(n^2) loops on arrays,
       heavy string concatenation in loops, or repeated DB calls inside loops. Suggest batched or memoized approaches.
