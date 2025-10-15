@@ -1,17 +1,12 @@
 version: 1
-rag_sources:
-  - path: "docs/adr/**/*.md"
-    weight: 0.9
-  - path: "docs/guides/**/*.md"
-    weight: 0.3
-  - path: "README.md"
-    weight: 0.2
 rules:
-  - name: "Block TODOs"
-    condition: "banned-terms"
-    terms: ["FIXME"]
-    severity: "error"
-  - name: "AI Database Policy Check"
-    condition: "ai-review"
-    severity: "error"
-    prompt: "Analyze the code changes. If any code attempts to use or connect to a MongoDB database, you MUST report it as a policy violation. Reference the ADR documentation in your reasoning."
+  - name: ai-performance-hotpath
+    condition: ai-review
+    severity: error
+    tags: ['performance','ai-review']
+    paths:
+    - 'src/test-trigger/**'
+    - 'src/test-trigger/**'
+    prompt: |
+      Detect potential performance issues: synchronous blocking operations in async code, O(n^2) loops on arrays,
+      heavy string concatenation in loops, or repeated DB calls inside loops. Suggest batched or memoized approaches.
