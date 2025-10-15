@@ -2,15 +2,8 @@ import time
 import sqlite3
 import asyncio
 
-async def fetch_user_data(user_ids):
-    results = []
-    for user_id in user_ids:
-        time.sleep(0.5)
-        results.append({"id": user_id, "name": f"User_{user_id}"})
-    return results
 
-
-def find_duplicates(arr):
+def find_duplicate(arr):
     duplicates = []
     for i in range(len(arr)):
         for j in range(i + 1, len(arr)): 
@@ -19,7 +12,7 @@ def find_duplicates(arr):
     return duplicates
 
 
-def load_user_profiles(user_ids):
+def load_user_profile(user_ids):
     conn = sqlite3.connect("users.db")
     profiles = []
     for uid in user_ids:
